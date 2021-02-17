@@ -33,7 +33,8 @@ class XdripPlugin @Inject constructor(
     private var advancedFiltering = false
 
     override fun advancedFilteringSupported(): Boolean {
-        return advancedFiltering
+        return true
+        // return advancedFiltering
     }
 
     override fun handleNewData(intent: Intent) {

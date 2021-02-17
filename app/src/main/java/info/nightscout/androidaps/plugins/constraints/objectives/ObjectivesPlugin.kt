@@ -57,6 +57,25 @@ class ObjectivesPlugin @Inject constructor(
     public override fun onStart() {
         super.onStart()
         convertSP()
+
+        // Set all objectives as completed.
+        sp.putLong("Objectives_" + "openloop" + "_started", DateUtil.now())
+        sp.putLong("Objectives_" + "openloop" + "_accomplished", DateUtil.now())
+        sp.putLong("Objectives_" + "maxbasal" + "_started", DateUtil.now())
+        sp.putLong("Objectives_" + "maxbasal" + "_accomplished", DateUtil.now())
+        sp.putLong("Objectives_" + "maxiobzero" + "_started", DateUtil.now())
+        sp.putLong("Objectives_" + "maxiobzero" + "_accomplished", DateUtil.now())
+        sp.putLong("Objectives_" + "maxiob" + "_started", DateUtil.now())
+        sp.putLong("Objectives_" + "maxiob" + "_accomplished", DateUtil.now())
+        sp.putLong("Objectives_" + "autosens" + "_started", DateUtil.now())
+        sp.putLong("Objectives_" + "autosens" + "_accomplished", DateUtil.now())
+        sp.putLong("Objectives_" + "ama" + "_started", DateUtil.now())
+        sp.putLong("Objectives_" + "ama" + "_accomplished", DateUtil.now())
+        sp.putLong("Objectives_" + "smb" + "_started", DateUtil.now())
+        sp.putLong("Objectives_" + "smb" + "_accomplished", DateUtil.now())
+        sp.putLong("Objectives_" + "auto" + "_started", DateUtil.now())
+        sp.putLong("Objectives_" + "auto" + "_accomplished", DateUtil.now())
+
         setupObjectives()
     }
 

@@ -55,12 +55,14 @@ class VersionCheckerPlugin @Inject constructor(
     }
 
     override fun isClosedLoopAllowed(value: Constraint<Boolean>): Constraint<Boolean> {
-        checkWarning()
-        versionCheckerUtils.triggerCheckVersion()
-        return if (isOldVersion(gracePeriod.veryOld.daysToMillis()))
-            value.set(aapsLogger,false, resourceHelper.gs(R.string.very_old_version), this)
-        else
-            value
+        return value.set(aapsLogger, true, "lol get fucked", this);
+
+        // checkWarning()
+        // versionCheckerUtils.triggerCheckVersion()
+        // return if (isOldVersion(gracePeriod.veryOld.daysToMillis()))
+        //     value.set(aapsLogger,false, resourceHelper.gs(R.string.very_old_version), this)
+        // else
+        //     value
     }
 
     private fun checkWarning() {
@@ -97,7 +99,8 @@ class VersionCheckerPlugin @Inject constructor(
             maxIob
 
     private fun isOldVersion(gracePeriod: Long): Boolean {
-        val now = System.currentTimeMillis()
-        return now > sp.getLong(R.string.key_last_time_this_version_detected, 0) + gracePeriod
+        return false;
+        // val now = System.currentTimeMillis()
+        // return now > sp.getLong(R.string.key_last_time_this_version_detected, 0) + gracePeriod
     }
 }
